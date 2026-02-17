@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCount = 100;
+        const particleCount = 50;
         const connectionDistance = 150;
         const mouseRadius = 150;
         let mouse = { x: null, y: null };
