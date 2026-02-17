@@ -35,6 +35,31 @@ body {
     scroll-behavior: smooth;
 }
 
+#neural-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+    /* Slightly lower opacity for white background */
+}
+
+section,
+.header,
+.footer {
+    position: relative;
+    z-index: 1;
+}
+
+.hero,
+.benefits,
+.how-it-works {
+    background: transparent;
+}
+
 h1,
 h2,
 h3,
@@ -133,12 +158,12 @@ ul {
 
 /* Header */
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     background-color: var(--glass);
     border-bottom: 1px solid var(--border);
 }
