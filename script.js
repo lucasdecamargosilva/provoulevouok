@@ -102,8 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCount = 50;
-        const connectionDistance = 150;
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 15 : 30; // Much fewer particles
+        const connectionDistance = isMobile ? 120 : 160;
         const mouseRadius = 150;
         let mouse = { x: null, y: null };
 
@@ -126,9 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
+                this.size = Math.random() * 3 + (isMobile ? 3 : 2); // Larger particles
+                this.speedX = Math.random() * 0.5 - 0.25; // Slower movement
+                this.speedY = Math.random() * 0.5 - 0.25;
             }
 
             update() {
